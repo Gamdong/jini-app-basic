@@ -10,7 +10,7 @@ export class StorageService {
 
   constructor() {
 
-
+    console.log('loading StorageService');
   }
 
   // 저장

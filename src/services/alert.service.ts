@@ -20,6 +20,8 @@ export class AlertService{
     private alertCtrl: AlertController,
     private loadingCtrl: LoadingController ) {
 
+    console.log('loading AlertService');
+
 
   }
 
