@@ -1,0 +1,6 @@
+<ion-list>
+  <ion-list-header>블루투스</ion-list-header>
+  <button ion-item (click)=" action('connection')" [disabled]="popButtonDisable('btn-connection')">장치 연결</button>
+  <button ion-item (click)=" action('disconnection')" [disabled]="popButtonDisable('btn-disconnection')">장치 연결끊기</button>
+  <button ion-item (click)=" action('ble-search')">장치 검색</button>
+</ion-list>
