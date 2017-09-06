@@ -96,3 +96,29 @@ export function RestangularConfigFactory (RestangularProvider) {
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
+
+
+
+// Root 변수
+export var bleDevice: {[k: string]: any} = {
+  deviceId: '',
+  deviceName: '',
+  serviceUUID: '',        //연결시마다 갱신
+  characteristicUUID: '',  //연결시마다 갱신
+  connected: false,
+  scaned: false
+};
+
+function loadBleDeviceInfo(){
+  console.log('loading bluetooth device Info');
+  var strDevice = localStorage.getItem('ble-device');
+  if (strDevice == null) return;
+  var objDevice = JSON.parse(strDevice);
+  bleDevice.deviceId = objDevice.id;
+}
+
+(function AppInit(){
+  loadBleDeviceInfo(); //저장된 블루투스 장치 불러오기
+
+})();
+
